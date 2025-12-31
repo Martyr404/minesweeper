@@ -18,7 +18,7 @@ const getNumberColor = (count: number) => {
     case 4: return 'text-purple-600';
     case 5: return 'text-orange-600';
     case 6: return 'text-teal-600';
-    case 7: return 'text-gray-900';
+    case 7: return 'text-indigo-600';
     case 8: return 'text-gray-500';
     default: return 'text-gray-700';
   }
@@ -45,7 +45,7 @@ const Cell: React.FC<CellProps> = ({ data, onClick, onContextMenu, gameStatus, i
 
   // Unrevealed style (Raised effect)
   const unrevealedClasses = "bg-gray-200 hover:bg-gray-300 border-b-4 border-r-4 border-gray-400 border-t border-l border-white shadow-sm active:border-b-0 active:border-r-0 active:border-t-4 active:border-l-4 active:border-gray-400 active:shadow-inner";
-  
+
   // Revealed style (Depressed/Flat effect)
   const revealedClasses = "bg-gray-100 border border-gray-200 shadow-inner cursor-default";
 
@@ -54,7 +54,7 @@ const Cell: React.FC<CellProps> = ({ data, onClick, onContextMenu, gameStatus, i
 
   // Mine style (Exploded)
   const mineClasses = isRevealed && isMine ? "bg-red-500 text-white border-none shadow-inner animate-pulse" : "";
-  
+
   // God Mode Ghost Mine (Unrevealed Mine)
   const godModeMineClasses = (isGodMode && isMine && !isRevealed && !isFlagged) ? "bg-gray-200 border-b-4 border-r-4 border-gray-400 border-t border-l border-white shadow-sm opacity-90" : "";
 
@@ -68,7 +68,7 @@ const Cell: React.FC<CellProps> = ({ data, onClick, onContextMenu, gameStatus, i
       content = neighborCount;
     }
   } else if (isGodMode && isMine) {
-     content = <MineIcon className="w-5 h-5 text-gray-400 opacity-50" />;
+    content = <MineIcon className="w-5 h-5 text-gray-400 opacity-50" />;
   }
 
   // Combine classes based on state
